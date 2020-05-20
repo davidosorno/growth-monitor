@@ -2,7 +2,7 @@ package com.dog.childgrowthmonitor.data.visit
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import com.dog.childgrowthmonitor.data.AnthroPlusDataBase
+import com.dog.childgrowthmonitor.data.GrowthMonitorDataBase
 
 class VisitRepository(
     val visitDao: VisitDao
@@ -15,7 +15,7 @@ class VisitRepository(
         fun getInstance(context: Context): VisitRepository? {
             return instance ?: synchronized(VisitRepository::class.java){
                 if(instance == null){
-                    val database = AnthroPlusDataBase.getInstance(context)
+                    val database = GrowthMonitorDataBase.getInstance(context)
                     instance = VisitRepository(database.visitDao())
                 }
                 return instance

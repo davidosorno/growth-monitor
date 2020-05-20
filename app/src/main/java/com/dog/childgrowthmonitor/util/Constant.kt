@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.View
 import java.util.concurrent.Executors
 
-const val DATABASE_NAME = "AnthroPlusDataBase-db"
+const val DATABASE_NAME = "GrowthMonitor-db"
 
 const val CHILD_ID = "idChild"
 const val PARENT_ID = "idParent"

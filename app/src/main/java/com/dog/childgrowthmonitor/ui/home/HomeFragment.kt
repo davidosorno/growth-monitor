@@ -37,21 +37,18 @@ class HomeFragment : Fragment() {
         SearchViewModel.idOnSearch.observe(viewLifecycleOwner, Observer {
             it?.let {
                 viewModel.getChild(it)
+                viewModel.canNavigate()
             }
         })
 
         viewModel.child.observe(viewLifecycleOwner, Observer {
             it?.let {
-                viewModel.canNavigate()
-            }
-        })
-
-        viewModel.canNavigate.observe(viewLifecycleOwner, Observer {
-            if(it){
-                findNavController().navigate(
-                    HomeFragmentDirections.actionNavHomeToNavVisit(viewModel.child.value!!)
-                )
-                viewModel.cancelNavigation()
+                if(viewModel.canNavigate.value!!){
+                    findNavController().navigate(
+                        HomeFragmentDirections.actionNavHomeToNavVisit(viewModel.child.value!!)
+                    )
+                    viewModel.cancelNavigation()
+                }
             }
         })
 

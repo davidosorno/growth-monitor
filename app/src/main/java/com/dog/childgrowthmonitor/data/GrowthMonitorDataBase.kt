@@ -39,7 +39,7 @@ import kotlinx.coroutines.Dispatchers
 )
 
 @TypeConverters(Converters::class)
-abstract class AnthroPlusDataBase : RoomDatabase() {
+abstract class GrowthMonitorDataBase : RoomDatabase() {
 
     abstract fun addressDao(): AddressDao
     abstract fun cityDao(): CityDao
@@ -51,15 +51,15 @@ abstract class AnthroPlusDataBase : RoomDatabase() {
 
 
     companion object{
-        private var INSTANCE: AnthroPlusDataBase? = null
+        private var INSTANCE: GrowthMonitorDataBase? = null
 
-        fun getInstance(context: Context): AnthroPlusDataBase {
+        fun getInstance(context: Context): GrowthMonitorDataBase {
             synchronized(this){
                 var instance = INSTANCE
                 if(instance == null){
                     instance = Room.databaseBuilder(
                         context,
-                        AnthroPlusDataBase::class.java,
+                        GrowthMonitorDataBase::class.java,
                         DATABASE_NAME
                     )
                         .addCallback(DataBaseCallBack())

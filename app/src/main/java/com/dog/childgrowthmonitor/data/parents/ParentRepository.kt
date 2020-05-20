@@ -3,7 +3,7 @@ package com.dog.childgrowthmonitor.data.parents
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.sqlite.db.SimpleSQLiteQuery
-import com.dog.childgrowthmonitor.data.AnthroPlusDataBase
+import com.dog.childgrowthmonitor.data.GrowthMonitorDataBase
 import com.dog.childgrowthmonitor.ui.search.SearchFilter
 import com.dog.childgrowthmonitor.util.executeThread
 import java.util.*
@@ -19,7 +19,7 @@ class ParentRepository(
         fun getInstance(context: Context): ParentRepository? {
             return instance ?: synchronized(ParentRepository::class.java) {
                 if(instance == null){
-                    val database = AnthroPlusDataBase.getInstance(context)
+                    val database = GrowthMonitorDataBase.getInstance(context)
                     instance = ParentRepository(database.parentDao())
                 }
                 return instance

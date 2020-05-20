@@ -8,9 +8,6 @@ import com.dog.childgrowthmonitor.data.BasicDao
 @Dao
 interface UserDao: BasicDao<User> {
 
-//    @Insert(onConflict = OnConflictStrategy.REPLACE)
-//    fun insert(user: User, visits: List<AnthroCalculator>): List<Long>
-
     @Transaction
     @Query("SELECT * FROM user ORDER BY firstName, lastName ASC")
     fun getAllUser(): LiveData<List<User>>

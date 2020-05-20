@@ -1,7 +1,7 @@
 package com.dog.childgrowthmonitor.data.address
 
 import android.content.Context
-import com.dog.childgrowthmonitor.data.AnthroPlusDataBase
+import com.dog.childgrowthmonitor.data.GrowthMonitorDataBase
 import com.dog.childgrowthmonitor.data.address.location.city.AddressesOfCity
 import com.dog.childgrowthmonitor.data.address.location.city.City
 import com.dog.childgrowthmonitor.data.address.location.city.CityDao
@@ -14,7 +14,7 @@ import com.dog.childgrowthmonitor.data.address.location.state.StateDao
 
 
 class LocationRepository(
-    private val dataBase: AnthroPlusDataBase?
+    private val dataBase: GrowthMonitorDataBase?
 ){
     companion object {
         @Volatile
@@ -23,7 +23,7 @@ class LocationRepository(
         fun getInstance(context: Context): LocationRepository? {
             return instance ?: synchronized(LocationRepository::class.java) {
                 if (instance == null) {
-                    val database = AnthroPlusDataBase.getInstance(context)
+                    val database = GrowthMonitorDataBase.getInstance(context)
                     instance = LocationRepository(database)
                 }
                 return instance

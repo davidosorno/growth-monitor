@@ -2,7 +2,7 @@ package com.dog.childgrowthmonitor.data.child
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import com.dog.childgrowthmonitor.data.AnthroPlusDataBase
+import com.dog.childgrowthmonitor.data.GrowthMonitorDataBase
 import java.util.*
 
 class ChildRepository(
@@ -16,7 +16,7 @@ class ChildRepository(
         fun getInstance(context: Context): ChildRepository? {
             return instance ?: synchronized(ChildRepository::class.java) {
                 if(instance == null){
-                    val database = AnthroPlusDataBase.getInstance(context)
+                    val database = GrowthMonitorDataBase.getInstance(context)
                     instance = ChildRepository(database.childDao())
                 }
                 return instance

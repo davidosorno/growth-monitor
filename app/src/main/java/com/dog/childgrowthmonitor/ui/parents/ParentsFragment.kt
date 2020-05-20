@@ -46,7 +46,7 @@ class ParentsFragment : Fragment() {
         setTitle(
             activity as AppCompatActivity,
             styleAppName(resources)!!,
-            child.fullName
+            "${child.fullName} - Parents"
         )
 
         val searchFather = SearchFragment()

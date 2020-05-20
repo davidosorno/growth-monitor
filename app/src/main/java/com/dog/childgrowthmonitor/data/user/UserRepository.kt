@@ -2,7 +2,7 @@ package com.dog.childgrowthmonitor.data.user
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import com.dog.childgrowthmonitor.data.AnthroPlusDataBase
+import com.dog.childgrowthmonitor.data.GrowthMonitorDataBase
 
 class UserRepository(
     private val userDao: UserDao
@@ -15,7 +15,7 @@ class UserRepository(
         fun getInstance(context: Context): UserRepository? {
             return instance ?: synchronized(UserRepository::class.java) {
                 if(instance == null){
-                    val database = AnthroPlusDataBase.getInstance(context)
+                    val database = GrowthMonitorDataBase.getInstance(context)
 //                    instance = UserRepository(database.userDao())
                 }
                 return instance
