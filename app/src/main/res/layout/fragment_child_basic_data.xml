@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="child"
+            type="com.dog.childgrowthmonitor.data.child.Child" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme"
+        android:layout_margin="@dimen/default_margin">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/group_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView2"
+            app:layout_constraintTop_toTopOf="@+id/appCompatTextView2">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_button_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:buttonTint="@color/text_color"
+                android:text="@string/male"
+                app:checkGender="@{ child }"/>
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_button_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:buttonTint="@color/text_color"
+                android:text="@string/female"
+                app:checkGender="@{ child }"/>
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/date_birth"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView2"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_date_of_birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1/02/2020"
+            android:layout_marginEnd="60dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_date_of_birth"
+            app:layout_constraintTop_toTopOf="@+id/appCompatTextView3"
+            app:setDateOfBirth="@{ child }"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_date_of_birth"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_date_range"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_date_of_birth" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView3"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3"
+            android:textColor="@color/gray_text"
+            tools:text="Age: 6 years 3 months (75 months)"
+            app:setAge="@{ child }"/>
+
+        <include
+            android:id="@+id/parents_name"
+            layout="@layout/show_parents_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_age"
+            android:visibility="invisible"
+            android:layout_marginTop="40dp"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/visit_floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/button_blue_color"
+            android:background="@color/button_blue_color"
+            app:borderWidth="0dp"
+            app:srcCompat="@drawable/ic_arrow_forward"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

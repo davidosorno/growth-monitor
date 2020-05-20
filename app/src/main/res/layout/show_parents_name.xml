@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_margin">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewFather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/father"
+        android:visibility="invisible"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtFather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewFather"
+        app:layout_constraintTop_toTopOf="@+id/textViewFather"
+        tools:text="@string/fatherName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewMother"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/mother"
+        android:visibility="invisible"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textViewFather"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFather" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtMother"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/txtFather"
+        app:layout_constraintTop_toTopOf="@+id/textViewMother"
+        tools:text="@string/motherName" />
+
+    <Button
+        android:id="@+id/btn_change_parents"
+        style="@android:style/Widget.Material.Light.Button.Small"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:background="@drawable/smallroundbutton"
+        android:backgroundTint="@color/button_blue_color"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="@string/change"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_marginTop="@dimen/default_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMother" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

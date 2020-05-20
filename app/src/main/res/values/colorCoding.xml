@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    This colors should be present when we show the percentiles-->
+    <!--
+        numeric range -1 SD ≤ z ≤+1 SD
+        graph line Median 50th percentile
+    -->
+    <color name="green">#3EDF13</color>
+
+    <!--
+        numeric range -2 SD ≤ z < -1 SD; or
+        +1 SD < z ≤+2 SD
+        graph line -1 SD and +1 SD 15th and 85th percentiles
+    -->
+    <color name="gold">#BFAD08</color>
+
+    <!--
+        numeric range -3 SD ≤ z < -2 SD; or
+        +2 SD < z ≤+3 SD
+        graph line -2 SD and +2 SD 3rd and 97th percentiles
+    -->
+    <color name="red">#BF0303</color>
+
+    <!--
+        numeric range z <-3 SD; z >+3 SD
+        graph line -3 SD and +3 SD NA*
+    -->
+    <color name="black">#000000</color>
+
+
+<!--    Esto es solo para el fondo de prueba hecho con Drawable-->
+    <color name="dark_red">#A14F4F</color>
+    <color name="light_red">#B94F4F</color>
+    <color name="light_redd">#194F4F</color>
+
+</resources>

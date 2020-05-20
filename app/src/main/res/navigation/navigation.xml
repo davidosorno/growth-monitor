@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.dog.childgrowthmonitor.ui.home.HomeFragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_visit"
+            app:destination="@id/nav_visit"
+            app:popUpTo="@+id/nav_home"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_visit"
+        android:name="com.dog.childgrowthmonitor.ui.add.child.basicdata.BasicDataFragment"
+        tools:layout="@layout/fragment_child_basic_data">
+        <argument
+            android:name="idChild"
+            app:argType="com.dog.childgrowthmonitor.data.child.Child" />
+        <action
+            android:id="@+id/action_nav_visit_to_parents"
+            app:destination="@id/nav_parents"
+            app:popUpTo="@+id/nav_visit"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_nav_visit_to_nav_weightAndHeightFragment"
+            app:destination="@id/nav_weightAndHeightFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_showPercentilesFragment"
+        android:name="com.dog.childgrowthmonitor.ui.visit.showPercentiles.ShowPercentilesFragment"
+        tools:layout="@layout/fragment_show_percentiles">
+        <argument
+            android:name="idChild"
+            app:argType="com.dog.childgrowthmonitor.data.child.Child" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_weightAndHeightFragment"
+        android:name="com.dog.childgrowthmonitor.ui.visit.weightandheight.WeightAndHeightFragment"
+        tools:layout="@layout/fragment_weight_and_height">
+        <action
+            android:id="@+id/action_weightAndHeightFragment_to_showPercentilesFragment"
+            app:destination="@id/nav_showPercentilesFragment"
+            app:popUpTo="@+id/nav_weightAndHeightFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="idChild"
+            app:argType="com.dog.childgrowthmonitor.data.child.Child" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_child"
+        android:name="com.dog.childgrowthmonitor.ui.add.child.AddChildFragment"
+        tools:layout="@layout/fragment_add_child">
+        <action
+            android:id="@+id/action_nav_add_child_to_nav_visit"
+            app:destination="@id/nav_visit"
+            app:popUpTo="@+id/nav_add_child"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_parents"
+        android:name="com.dog.childgrowthmonitor.ui.parents.ParentsFragment"
+        tools:layout="@layout/fragment_parents">
+        <argument
+            android:name="idChild"
+            app:argType="com.dog.childgrowthmonitor.data.child.Child" />
+        <action
+            android:id="@+id/action_parents_to_nav_weightAndHeightFragment"
+            app:destination="@id/nav_weightAndHeightFragment"
+            app:popUpTo="@+id/nav_parents"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_nav_parents_to_addParentActivity"
+            app:destination="@id/addParentActivity"
+            app:popUpTo="@+id/nav_parents"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <activity
+        android:id="@+id/addParentActivity"
+        android:name="com.dog.childgrowthmonitor.ui.add.parent.AddParentActivity"
+        tools:layout="@layout/activity_add_parent">
+        <argument
+            android:name="idChild"
+            app:argType="com.dog.childgrowthmonitor.data.child.Child" />
+    </activity>
+</navigation>

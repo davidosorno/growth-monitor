@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/optional_value"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/optional_value_percentile" />
+
+    <ImageView
+        android:id="@+id/img_percentile_line"
+        android:layout_width="0dp"
+        android:layout_height="23dp"
+        android:alpha="0.6"
+        android:contentDescription="@string/optional_value_percentile"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/optional_value"
+        app:layout_constraintEnd_toStartOf="@+id/real_score_wfa"
+        app:layout_constraintStart_toEndOf="@+id/optional_value"
+        app:layout_constraintTop_toTopOf="@+id/optional_value"
+        app:srcCompat="@drawable/linenumbers" />
+
+    <ImageView
+        android:id="@+id/img_percentile_position"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:contentDescription="@string/percentile"
+        app:layout_constraintBottom_toTopOf="@+id/img_percentile_line"
+        app:layout_constraintStart_toEndOf="@+id/optional_value"
+        app:layout_constraintTop_toTopOf="@+id/img_percentile_line"
+        app:srcCompat="@drawable/ic_beenhere" />
+
+
+    <TextView
+        android:id="@+id/real_score_wfa"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/img_percentile_line"
+        app:layout_constraintEnd_toStartOf="@+id/z_score_wfa_left"
+        app:layout_constraintTop_toTopOf="@+id/img_percentile_line"
+        tools:text="47.8" />
+
+    <TextView
+        android:id="@+id/z_score_wfa_left"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/real_score_wfa"
+        tools:text="-0.06" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/optional_value"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/optional_value_percentile" />
+
+    <ImageView
+        android:id="@+id/img_percentile_line"
+        android:layout_width="135dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:contentDescription="@string/optional_value_percentile"
+        app:layout_constraintBottom_toBottomOf="@+id/optional_value"
+        app:layout_constraintEnd_toStartOf="@+id/real_score_wfa"
+        app:layout_constraintStart_toEndOf="@+id/optional_value"
+        app:layout_constraintTop_toTopOf="@+id/optional_value"
+        app:srcCompat="@drawable/linenumbers" />
+
+    <ImageView
+        android:id="@+id/img_percentile_position"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:contentDescription="@string/percentile"
+        app:layout_constraintStart_toStartOf="@+id/img_percentile_line"
+        app:layout_constraintTop_toTopOf="@+id/optional_value"
+        app:srcCompat="@drawable/ic_beenhere" />
+    <TextView
+        android:id="@+id/real_score_wfa"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/z_score_wfa_left"
+        app:layout_constraintTop_toTopOf="@+id/optional_value"
+        tools:text="47.8" />
+
+    <TextView
+        android:id="@+id/z_score_wfa_left"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/optional_value"
+        tools:text="-0.06" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->

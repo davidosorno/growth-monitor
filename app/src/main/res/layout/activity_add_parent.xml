@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.add.parent.AddParentActivity">
+
+        <include layout="@layout/app_bar_main"/>
+
+        <include
+            android:id="@+id/basic_data_fields"
+            layout="@layout/add_basic_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin" />
+
+        <include
+            android:id="@+id/measured_fields"
+            layout="@layout/add_measured"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="@dimen/default_margin"/>
+    </LinearLayout>
+</layout>
