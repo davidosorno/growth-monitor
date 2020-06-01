@@ -64,11 +64,16 @@ class WeightAndHeightFragment : Fragment() {
         val leftToRight = AnimationUtils.loadAnimation(context, R.anim.lefttoright)
 
         root.percentile_wfa.optional_value.text = resources.getString(R.string.weight_for_age)
-        root.percentile_wfa.real_score_wfa.text = "23.4"
-        root.percentile_wfa.z_score_wfa_left.text = "-0.05"
+        root.percentile_wfa.real_score_wfa.text = "47.8"
+        root.percentile_wfa.z_score_wfa_left.text = "-0.06"
 
         root.percentile_hfa.optional_value.text = resources.getString(R.string.height_for_age)
+        root.percentile_hfa.real_score_wfa.text = "49.0"
+        root.percentile_hfa.z_score_wfa_left.text = "-0.03"
+
         root.percentile_bmifa.optional_value.text = resources.getString(R.string.BMI_for_age)
+        root.percentile_bmifa.real_score_wfa.text = "46.2"
+        root.percentile_bmifa.z_score_wfa_left.text = "-0.10"
 
         root.weight_person.afterTextChanged {
             viewModel.setWeight(root.weight_person.text.toString())
@@ -113,17 +118,17 @@ class WeightAndHeightFragment : Fragment() {
     }
 
     private fun placingPercentiles() {
-        var objectAnimator = ObjectAnimator.ofFloat(root.percentile_wfa.img_percentile_position, "translationX", 0f, 150f)
+        var objectAnimator = ObjectAnimator.ofFloat(root.percentile_wfa.img_percentile_position, "translationX", 0f, 215f)
         objectAnimator.duration = 2000
         objectAnimator.interpolator = AccelerateDecelerateInterpolator()
         objectAnimator.start()
 
-        objectAnimator = ObjectAnimator.ofFloat(root.percentile_hfa.img_percentile_position, "translationX", 0f, 100f)
+        objectAnimator = ObjectAnimator.ofFloat(root.percentile_hfa.img_percentile_position, "translationX", 0f, 225f)
         objectAnimator.duration = 2000
         objectAnimator.interpolator = AccelerateDecelerateInterpolator()
         objectAnimator.start()
 
-        objectAnimator = ObjectAnimator.ofFloat(root.percentile_bmifa.img_percentile_position, "translationX", 0f, 40f)
+        objectAnimator = ObjectAnimator.ofFloat(root.percentile_bmifa.img_percentile_position, "translationX", 0f, 210f)
         objectAnimator.duration = 2000
         objectAnimator.interpolator = AccelerateDecelerateInterpolator()
         objectAnimator.start()

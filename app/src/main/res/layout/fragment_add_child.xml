@@ -21,57 +21,17 @@
             layout="@layout/add_basic_data"
             android:id="@+id/basic_data_child"/>
 
-
-<!--        <androidx.appcompat.widget.AppCompatTextView-->
-<!--            android:id="@+id/appCompatTextView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/first_name"-->
-<!--            app:layout_constraintBottom_toBottomOf="@+id/txt_first_name"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/txt_first_name" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatEditText-->
-<!--            android:id="@+id/txt_first_name"-->
-<!--            android:layout_width="@dimen/default_size_editText"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="40dp"-->
-<!--            app:layout_constraintStart_toEndOf="@+id/appCompatTextView"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            tools:text="@string/first_name" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatTextView-->
-<!--            android:id="@+id/appCompatTextView2"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/last_name"-->
-<!--            app:layout_constraintBottom_toBottomOf="@+id/txt_last_name"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/txt_last_name" />-->
-
-
-<!--        <androidx.appcompat.widget.AppCompatEditText-->
-<!--            android:id="@+id/txt_last_name"-->
-<!--            android:layout_width="@dimen/default_size_editText"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/txt_first_name"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/txt_first_name"-->
-<!--            android:layout_marginTop="40dp"-->
-<!--            tools:text="@string/last_name" />-->
-
-
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_child_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:backgroundTint="@color/button_blue_color"
             android:background="@color/button_blue_color"
-            app:borderWidth="0dp"
+            app:pressedTranslationZ="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_arrow_forward" />
 
 

@@ -7,9 +7,13 @@ import androidx.room.PrimaryKey
 
 @Entity(indices = [Index("idCountry")])
 data class Country(
-    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @PrimaryKey
     val idCountry: Long = 0,
 
     @NonNull
-    val nameCountry: String = ""
+    val name: String = "",
+
+    @NonNull
+    val phoneCode: Int = 0
 )

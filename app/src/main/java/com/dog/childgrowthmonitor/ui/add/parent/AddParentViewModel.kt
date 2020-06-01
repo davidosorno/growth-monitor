@@ -39,7 +39,7 @@ class AddParentViewModel(
 
     fun save(view: View){
         if (
-            view.txt_first_name.validate(
+            view.txt_address.validate(
                 view.resources.getString(
                     R.string.error_empty_field,
                     view.resources.getString(R.string.first_name)
@@ -59,7 +59,7 @@ class AddParentViewModel(
 
     private fun saveParent(view: View) {
         uiScope.launch {
-            parent.firstName = view.txt_first_name.text.toString().capitalizeAllWords()
+            parent.firstName = view.txt_address.text.toString().capitalizeAllWords()
             parent.lastName = view.txt_last_name.text.toString().capitalizeAllWords()
             parent.height = view.height_person.text.toString().toIntOrNull() ?: 0
             parent.weight = view.weight_person.text.toString().toFloatOrNull() ?: 0F

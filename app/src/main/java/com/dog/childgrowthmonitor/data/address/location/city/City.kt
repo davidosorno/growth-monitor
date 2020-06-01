@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey
 
 @Entity(indices = [Index("idCity")])
 data class City(
-    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @PrimaryKey
     val idCity: Long = 0L,
 
     @NonNull

@@ -25,25 +25,4 @@ class HomeViewModel(
     fun cancelNavigation() {
         _canNavigate.value = false
     }
-
-////    TODO MUTABLELIVEDATA is useful when we need to create an object in DB, otherwise we have to use MEDIATORLIVEDATA to get data from DB
-//
-//    private val _children = MediatorLiveData<List<Child>>()
-//    val children: LiveData<List<Child>>
-//        get() = _children
-//
-//    init {
-//        _children.addSource(childRepository.getChildren(), _children::setValue)
-//    }
-//
-//    fun getData(list: List<Child>){
-//        val newListSuggestions = mutableListOf<String>()
-//        val newListId = mutableListOf<Long>()
-//        for(i in list.indices){
-//            newListSuggestions.add("${list[i].firstName} ${list[i].lastName}")
-//            newListId.add(list[i].idChild)
-//        }
-//        SearchViewModel.listSuggestions.value = newListSuggestions
-//        SearchViewModel.listId.value = newListId
-//    }
 }

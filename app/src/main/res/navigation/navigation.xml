@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_nav_visit_to_nav_weightAndHeightFragment"
             app:destination="@id/nav_weightAndHeightFragment" />
+        <action
+            android:id="@+id/action_nav_visit_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_showPercentilesFragment"
@@ -88,4 +91,13 @@
             android:name="idChild"
             app:argType="com.dog.childgrowthmonitor.data.child.Child" />
     </activity>
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.dog.childgrowthmonitor.ui.add.address.AddAddressFragment"
+        android:label="AddAddressFragment"
+        tools:layout="@layout/fragment_add_address">
+        <action
+            android:id="@+id/action_addAddressFragment_to_nav_weightAndHeightFragment"
+            app:destination="@id/nav_weightAndHeightFragment" />
+    </fragment>
 </navigation>

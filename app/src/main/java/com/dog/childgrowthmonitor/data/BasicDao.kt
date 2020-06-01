@@ -8,11 +8,17 @@ interface BasicDao<T> {
     fun insert(obj: T): Long
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(vararg obj: T): List<Long>
+    fun insertAll(vararg obj: T)
 
     @Update (onConflict = OnConflictStrategy.IGNORE)
     fun update(obj: T): Int
 
     @Delete
     fun delete(obj: T)
+}
+
+@Transaction
+inline fun <reified T> BasicDao<T>.insertOrUpdate(item: T){
+    if(insert(item) != -1L) return
+    update(item)
 }

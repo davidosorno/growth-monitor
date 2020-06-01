@@ -34,7 +34,7 @@ class AddChildViewModel(
 
     fun saveChild(view: View){
         if (
-            view.txt_first_name.validate(
+            view.txt_address.validate(
                 view.resources.getString(
                     R.string.error_empty_field,
                     view.resources.getString(R.string.first_name)
@@ -50,7 +50,7 @@ class AddChildViewModel(
             )
         ) {
             //If idChild has a value means the User is trying to modify the name or last name
-            child.firstName = view.txt_first_name.text.toString().capitalizeAllWords() //Can be two names
+            child.firstName = view.txt_address.text.toString().capitalizeAllWords() //Can be two names
             child.lastName = view.txt_last_name.text.toString().capitalizeAllWords() //Can be two last names
             if(child.idChild > 0){
                 update()

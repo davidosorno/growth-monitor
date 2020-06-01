@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "43c968a3f2938b364dafbaa8f727ff43",
+    "identityHash": "33a49afc5335930c6fe90d09b9ac960d",
     "entities": [
       {
         "tableName": "Child",
@@ -115,7 +115,7 @@
       },
       {
         "tableName": "Visit",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idVisit` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `dateVisit` INTEGER NOT NULL, `observerId` INTEGER NOT NULL, `height` REAL NOT NULL, `weight` REAL NOT NULL, `measured` INTEGER NOT NULL, `oedema` INTEGER NOT NULL, `child_id` INTEGER NOT NULL, FOREIGN KEY(`child_id`) REFERENCES `Child`(`idChild`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idVisit` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `dateVisit` INTEGER NOT NULL, `height` REAL NOT NULL, `weight` REAL NOT NULL, `measured` INTEGER NOT NULL, `oedema` INTEGER NOT NULL, `child_id` INTEGER NOT NULL, FOREIGN KEY(`child_id`) REFERENCES `Child`(`idChild`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
         "fields": [
           {
             "fieldPath": "idVisit",
@@ -126,12 +126,6 @@
           {
             "fieldPath": "dateVisit",
             "columnName": "dateVisit",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "observerId",
-            "columnName": "observerId",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -181,6 +175,14 @@
               "child_id"
             ],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_Visit_idVisit_child_id` ON `${TABLE_NAME}` (`idVisit`, `child_id`)"
+          },
+          {
+            "name": "index_Visit_child_id",
+            "unique": false,
+            "columnNames": [
+              "child_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Visit_child_id` ON `${TABLE_NAME}` (`child_id`)"
           }
         ],
         "foreignKeys": [
@@ -252,7 +254,7 @@
       },
       {
         "tableName": "Country",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCountry` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nameCountry` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCountry` INTEGER NOT NULL, `name` TEXT NOT NULL, `phoneCode` INTEGER NOT NULL, PRIMARY KEY(`idCountry`))",
         "fields": [
           {
             "fieldPath": "idCountry",
@@ -261,9 +263,15 @@
             "notNull": true
           },
           {
-            "fieldPath": "nameCountry",
-            "columnName": "nameCountry",
+            "fieldPath": "name",
+            "columnName": "name",
             "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phoneCode",
+            "columnName": "phoneCode",
+            "affinity": "INTEGER",
             "notNull": true
           }
         ],
@@ -271,7 +279,7 @@
           "columnNames": [
             "idCountry"
           ],
-          "autoGenerate": true
+          "autoGenerate": false
         },
         "indices": [
           {
@@ -287,7 +295,7 @@
       },
       {
         "tableName": "State",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idState` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nameState` TEXT NOT NULL, `country_id` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idState` INTEGER NOT NULL, `nameState` TEXT NOT NULL, `country_id` INTEGER NOT NULL, PRIMARY KEY(`idState`))",
         "fields": [
           {
             "fieldPath": "idState",
@@ -312,7 +320,7 @@
           "columnNames": [
             "idState"
           ],
-          "autoGenerate": true
+          "autoGenerate": false
         },
         "indices": [
           {
@@ -328,7 +336,7 @@
       },
       {
         "tableName": "City",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCity` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nameCity` TEXT NOT NULL, `state_id` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCity` INTEGER NOT NULL, `nameCity` TEXT NOT NULL, `state_id` INTEGER NOT NULL, PRIMARY KEY(`idCity`))",
         "fields": [
           {
             "fieldPath": "idCity",
@@ -353,7 +361,7 @@
           "columnNames": [
             "idCity"
           ],
-          "autoGenerate": true
+          "autoGenerate": false
         },
         "indices": [
           {
@@ -480,6 +488,22 @@
               "idParent"
             ],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_ParentChildrenCrossRef_idChild_idParent` ON `${TABLE_NAME}` (`idChild`, `idParent`)"
+          },
+          {
+            "name": "index_ParentChildrenCrossRef_idChild",
+            "unique": false,
+            "columnNames": [
+              "idChild"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ParentChildrenCrossRef_idChild` ON `${TABLE_NAME}` (`idChild`)"
+          },
+          {
+            "name": "index_ParentChildrenCrossRef_idParent",
+            "unique": false,
+            "columnNames": [
+              "idParent"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ParentChildrenCrossRef_idParent` ON `${TABLE_NAME}` (`idParent`)"
           }
         ],
         "foreignKeys": []
@@ -488,7 +512,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '43c968a3f2938b364dafbaa8f727ff43')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '33a49afc5335930c6fe90d09b9ac960d')"
     ]
   }
 }

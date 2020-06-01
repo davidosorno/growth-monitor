@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey
 
 @Entity(indices = [Index("idState")])
 data class State (
-    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @PrimaryKey
     val idState: Long = 0L,
 
     @NonNull

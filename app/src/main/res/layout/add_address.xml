@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="@string/address"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_address" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/appCompatTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/apt"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_apt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_apt" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_apt"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/apt"
+        app:layout_constraintStart_toEndOf="@+id/appCompatTextView"
+        app:layout_constraintTop_toBottomOf="@+id/txt_address" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/zipCode"
+        app:layout_constraintBottom_toBottomOf="@+id/zip_code"
+        app:layout_constraintEnd_toStartOf="@+id/zip_code"
+        app:layout_constraintTop_toTopOf="@+id/zip_code" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/zip_code"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/zipCode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_address" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView4"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="@string/country"
+        app:layout_constraintBottom_toBottomOf="@+id/spin_country"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spin_country"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/spin_country"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spin_margin"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_apt"
+        app:layout_constraintTop_toBottomOf="@+id/txt_apt" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView41"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="@string/state"
+        app:layout_constraintBottom_toBottomOf="@+id/spin_state"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spin_state"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/spin_state"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spin_margin"
+        app:layout_constraintEnd_toEndOf="@+id/spin_country"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_apt"
+        app:layout_constraintTop_toBottomOf="@+id/spin_country" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView42"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="@string/city"
+        app:layout_constraintBottom_toBottomOf="@+id/spin_city"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spin_city"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/spin_city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spin_margin"
+        app:layout_constraintEnd_toEndOf="@+id/spin_state"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_apt"
+        app:layout_constraintTop_toBottomOf="@+id/spin_state" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

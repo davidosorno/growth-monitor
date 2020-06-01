@@ -13,6 +13,5 @@
             android:text="@string/father"
             android:textSize="22sp"
             android:textStyle="bold"/>
-
     </RelativeLayout>
 </layout>
